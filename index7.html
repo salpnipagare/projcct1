@@ -1,0 +1,101 @@
+<!-- calculator code in javascript and html and css -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> creating calculator</title>
+    <style>
+        #calci{
+            border: 4px solid;
+            width:500px;
+            margin-left:60px;
+            margin-right:150px;
+        Q}
+        button{
+            border: 3px solid;
+            height: 60px;
+            width: 60px;
+            margin: 4px;
+        }
+        #display{
+            border: 4px solid;
+            text-align:right ;
+            width:481px;
+            height:66px ;
+            margin: 3px;
+        }
+        #disk{
+            border:2px ;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="calci">
+        <input type="text" id="display" >
+        <br>
+        <div id="btn">
+            <button onclick="check_all()">CHECK</button>
+            <button onclick="correct_all()">CORRE</button>
+            <button onclick="clear_onechar()">DELE</button>
+            <input>
+        </div>
+        <div>
+            <button onclick="add_item()">GT</button>
+            <button onclick="add_item(7)">7</button>
+            <button onclick="add_item(8)">8</button>
+            <button onclick="add_item(9)">9</button>
+            <button onclick="add_item('/')">/</button>
+            <button onclick="add_item()">AUTO</button>
+            <button onclick="add_item()">ON/AC</button>
+        </div>
+        <div>
+            <button onclick="add_item()">MU</button>
+            <button onclick="add_item(4)">4</button>
+            <button onclick="add_item(5)">5</button>
+            <button onclick="add_item(6)">6</button>
+            <button onclick="add_item('*')">*</button>
+            <button onclick="add_item('%')">%</button>
+            <button onclick="add_item()">M/RC</button>
+        </div>
+        <div>
+            <button onclick="add_item()">+/-</button>
+            <button onclick="add_item(1)">1</button>
+            <button onclick="add_item(2)">2</button>
+            <button onclick="add_item(3)">3</button>
+            <button onclick="add_item('+')">+</button>
+            <button onclick="add_item('-')">-</button>
+            <button onclick="add_item()">M/-=</button>
+        </div>
+        <div>
+            <button onclick="add_item()">CE</button>
+            <button onclick="add_item('0')">0</button>
+            <button onclick="add_item('00')">00</button>
+            <button onclick="add_item('.')">.</button>
+            <button onclick="add_item('+')">+</button>
+            <button onclick="show_result()">=</button>
+            <button onclick="add_item()">M/+=</button>
+        </div>
+    </div>
+    <script>
+        function add_item(val) {
+            document.getElementById("display").value+=val
+        }
+        function check_all() {
+            document.getElementById("display").value=""
+        }
+        function correct_all() {
+            document.getElementById("display").value=""
+        }
+        function clear_onechar() {
+            let a=document.getElementById("display").value
+            document.getElementById("display").value=a.substring(0,a.length-1)
+        }
+        function show_result() {
+            let res=eval(document.getElementById("display").value)
+            document.getElementById("display").value = res
+        }
+    </script>
+</body>
+</html>
